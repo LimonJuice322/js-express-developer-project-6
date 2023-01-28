@@ -4,6 +4,7 @@
   "description": "[![Actions Status](https://github.com/LimonJuice322/js-express-developer-project-6/workflows/hexlet-check/badge.svg)](https://github.com/LimonJuice322/js-express-developer-project-6/actions)",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/LimonJuice322/js-express-developer-project-6/issues"
   },
-  "homepage": "https://github.com/LimonJuice322/js-express-developer-project-6#readme"
+  "homepage": "https://github.com/LimonJuice322/js-express-developer-project-6#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
