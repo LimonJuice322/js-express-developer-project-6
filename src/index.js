@@ -1,11 +1,4 @@
-const express = require('express');
-const app = express();
-const port = 3000;
+// @ts-check
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-});
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
