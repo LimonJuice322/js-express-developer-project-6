@@ -51,6 +51,15 @@ describe('test users CRUD', () => {
     expect(response.statusCode).toBe(200);
   });
 
+  it('edit', async () => {
+    const response = await app.inject({
+      method: 'GET',
+      url: app.reverse('settings', { id: 1 }),
+    });
+
+    expect(response.statusCode).toBe(200);
+  });
+
   it('create', async () => {
     const params = testData.users.new;
     const response = await app.inject({
@@ -68,6 +77,45 @@ describe('test users CRUD', () => {
     };
     const user = await models.user.query().findOne({ email: params.email });
     expect(user).toMatchObject(expected);
+  });
+
+  it('update', async () => {
+    const params = testData.users.edit;
+    const response = await app.inject({
+      method: 'PATCH',
+      url: app.reverse('editUser', { id: 1 }),
+      payload: {
+        data: params,
+      },
+    });
+
+    expect(response.statusCode).toBe(302);
+    const expected = {
+      ..._.omit(params, 'password'),
+      passwordDigest: encrypt(params.password),
+    };
+    const user = await models.user.query().findOne({ id: 1 });
+    expect(user).toMatchObject(expected);
+  });
+
+  it('delete', async () => {
+    const params = testData.users.edit;
+    const response = await app.inject({
+      method: 'DELETE',
+      url: app.reverse('deleteUser', { id: 1 }),
+      payload: {
+        data: params,
+      },
+    });
+
+    expect(response.statusCode).toBe(302);
+    const expected = {
+      ..._.omit(params, 'password'),
+      passwordDigest: encrypt(params.password),
+    };
+    const user = await models.user.query().findOne({ id: 1 });
+    console.log(user, expected)
+    expect(user).toBeUndefined();
   });
 
   afterEach(async () => {

@@ -61,7 +61,7 @@ const setUpStaticAssets = (app) => {
 const setupLocalization = async () => {
   await i18next
     .init({
-      lng: 'en',
+      lng: 'ru',
       fallbackLng: 'ru',
       // debug: isDevelopment,
       resources: {
@@ -74,6 +74,7 @@ const setupLocalization = async () => {
 const addHooks = (app) => {
   app.addHook('preHandler', async (req, reply) => {
     reply.locals = {
+      userId: () => req.session.get('userId') || '',
       isAuthenticated: () => req.isAuthenticated(),
     };
   });
