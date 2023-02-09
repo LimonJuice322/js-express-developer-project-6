@@ -5,7 +5,7 @@ mixin formFor(entity = null)
   form&attributes(attributes)
     block
 
-mixin input(entity, propertyName, errors = {})
+mixin input(entity, propertyName, label, errors = {})
   - propertyErrors = _.get(errors, propertyName)
   - classLine = 'form-control' + (_.isEmpty(propertyErrors) ? '' : ' is-invalid')
   - inputId = getInputId(propertyName)
@@ -16,9 +16,14 @@ mixin input(entity, propertyName, errors = {})
       class=classLine
       value=_.get(entity, propertyName, '')
     )&attributes(attributes)
-    label(
-      for= inputId
-    )= propertyName
+    if (label)
+      label(
+        for= inputId
+      )= label
+    else
+      label(
+        for= inputId
+      )= propertyName
     if !_.isEmpty(propertyErrors)
       .invalid-feedback= propertyErrors.map(({ message }) => message).join('. ')
 

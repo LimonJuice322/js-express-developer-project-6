@@ -27,6 +27,20 @@ export default {
           error: 'An error occurred while deleting',
         }
       },
+      statuses: {
+        create: {
+          success: 'Status has been created successfully',
+          error: 'An error occurred while creating',
+        },
+        edit: {
+          error: 'Wrong data',
+          success: 'Data changed successfully',
+        },
+        delete: {
+          success: 'Status has been deleted successfully',
+          error: 'An error occurred while deleting',
+        },
+      },
       authError: 'Access denied! Please login',
     },
     layouts: {
@@ -35,7 +49,7 @@ export default {
         signIn: 'Login',
         signUp: 'Register',
         signOut: 'Logout',
-        settings: 'Settings',
+        statuses: 'Statuses',
       },
     },
     views: {
@@ -51,10 +65,6 @@ export default {
         firstName: 'First name',
         lastName: 'Last Name',
         actions: 'Actions',
-        action: {
-          edit: 'Edit',
-          delete: 'Delete',
-        },
         new: {
           submit: 'Register',
           signUp: 'Register',
@@ -64,6 +74,17 @@ export default {
           signUp: 'Edit settings',
         }
       },
+      statuses: {
+        id: 'ID',
+        name: 'Name',
+        createdAt: 'Created at',
+        create: 'Create',
+      },
+      status: {
+        heading: 'Create status',
+        editHeading: 'Change status',
+        submit: 'Submit',
+      },
       welcome: {
         index: {
           hello: 'Hello from Hexlet!',
@@ -71,6 +92,10 @@ export default {
           more: 'Learn more',
         },
       },
+    },
+    action: {
+      edit: 'Edit',
+      delete: 'Delete',
     },
   },
 };
