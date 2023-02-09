@@ -18,5 +18,5 @@ block content
           td= user.lastName
           td
             div.d-flex.flex-wrap
-              a.btn.btn-primary.me-1(href=route('settings', { id: user.id }))= t('views.users.action.edit')
-              +buttonTo(route('deleteUser', { id: user.id }), 'delete')(class="btn btn-danger" value=t('views.users.action.delete'))
+              a.btn.btn-primary.me-1(href=route('settings', { id: user.id }))= t('action.edit')
+              +buttonTo(route('deleteUser', { id: user.id }), 'delete')(class="btn btn-danger" value=t('action.delete'))

@@ -27,6 +27,20 @@ export default {
           error: 'Ошибка при удалении пользователя',
         },
       },
+      statuses: {
+        create: {
+          success: 'Статус успешно создан',
+          error: 'Не удалось создать статус',
+        },
+        edit: {
+          error: 'Указаны неверные данные',
+          success: 'Данные успешно изменены',
+        },
+        delete: {
+          success: 'Статус успешно удален',
+          error: 'Ошибка при удалении статуса',
+        },
+      },
       authError: 'Доступ запрещён! Пожалуйста, авторизируйтесь.',
     },
     layouts: {
@@ -35,6 +49,7 @@ export default {
         signIn: 'Вход',
         signUp: 'Регистрация',
         signOut: 'Выход',
+        statuses: 'Статусы',
       },
     },
     views: {
@@ -50,10 +65,6 @@ export default {
         firstName: 'Имя',
         lastName: 'Фамилия',
         actions: 'Действия',
-        action: {
-          edit: 'Изменить',
-          delete: 'Удалить',
-        },
         new: {
           submit: 'Сохранить',
           signUp: 'Регистрация',
@@ -63,6 +74,17 @@ export default {
           signUp: 'Изменение настроек',
         }
       },
+      statuses: {
+        id: 'ID',
+        name: 'Наименование',
+        createdAt: 'Дата создания',
+        create: 'Создать',
+      },
+      status: {
+        heading: 'Создать статус',
+        editHeading: 'Изменить статус',
+        submit: 'Сохранить',
+      },
       welcome: {
         index: {
           hello: 'Привет от Хекслета!',
@@ -70,6 +92,10 @@ export default {
           more: 'Узнать Больше',
         },
       },
+    },
+    action: {
+      edit: 'Изменить',
+      delete: 'Удалить',
     },
   },
 };
