@@ -109,12 +109,7 @@ describe('test users CRUD', () => {
     });
 
     expect(response.statusCode).toBe(302);
-    const expected = {
-      ..._.omit(params, 'password'),
-      passwordDigest: encrypt(params.password),
-    };
     const user = await models.user.query().findOne({ id: 1 });
-    console.log(user, expected)
     expect(user).toBeUndefined();
   });
 
