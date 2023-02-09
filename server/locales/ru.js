@@ -43,6 +43,13 @@ export default {
       },
       authError: 'Доступ запрещён! Пожалуйста, авторизируйтесь.',
     },
+    fields: {
+      password: 'Пароль',
+      email: 'Email',
+      name: 'Наименование',
+      firstName: 'Имя',
+      lastName: 'Фамилия',
+    },
     layouts: {
       application: {
         users: 'Пользователи',

@@ -43,6 +43,13 @@ export default {
       },
       authError: 'Access denied! Please login',
     },
+    fields: {
+      password: 'Password',
+      email: 'Email',
+      name: 'Name',
+      firstName: 'First name',
+      lastName: 'Last name',
+    },
     layouts: {
       application: {
         users: 'Users',

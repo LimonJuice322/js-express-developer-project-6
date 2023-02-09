@@ -6,5 +6,5 @@ block header
 block content
     +formFor()(action=route('editStatus', { id: status.id }) method='post')
         +input(type="hidden" name='_method' value='PATCH')
-        +input(user, 'name', 'Наименование', errors)(type="text" value=status.name)
+        +input(user, 'name', t('fields.name'), errors)(type="text" value=status.name placeholder=t('fields.name'))
         +submit(user)(value=t('views.status.submit'))
